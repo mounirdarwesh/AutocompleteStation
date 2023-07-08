@@ -9,6 +9,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * read CSV file and map it to List of Station Objects
+ */
 @Repository
 public class StationRepository {
     public List<Station> loadDataFromCSV(String csvFilePath) {
@@ -19,11 +22,13 @@ public class StationRepository {
             boolean headerSkipped = false;
 
             while ((line = reader.readLine()) != null) {
+                // skip first line in the csv file
                 if (!headerSkipped) {
                     headerSkipped = true;
                     continue;
                 }
 
+                // read file part and map it to Station Object
                 String[] parts = line.split(";");
                 if (parts.length >= 6) {
                     Station station = Station.builder()

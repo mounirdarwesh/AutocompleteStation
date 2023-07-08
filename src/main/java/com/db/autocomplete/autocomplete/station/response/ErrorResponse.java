@@ -3,6 +3,9 @@ package com.db.autocomplete.autocomplete.station.response;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+/**
+ * Error Template
+ */
 @Data
 @AllArgsConstructor
 public class ErrorResponse {
