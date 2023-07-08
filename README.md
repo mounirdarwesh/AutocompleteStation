@@ -14,7 +14,7 @@ This project provides a RESTful web service for autocompleting train station nam
 
     git clone git@github.com:mounirdarwesh/AutocompleteStation.git
 
-Build the project: It's recommended to run in Intellij because of the encoding.
+Build the project: **_It's recommended to run inside Intellij because of the encoding._**
 
     cd AutocompleteStation
     mvn clean install
@@ -56,5 +56,4 @@ The web service handles various error scenarios and provides appropriate error r
 * Alphanumeric characters in the input: Returns a 400 Bad Request response with an error code and description.
 * Missing or empty input parameter: Returns a 400 Bad Request response with an error code and description.
 * Input parameter length less than three characters: Returns a 400 Bad Request response with an error code and description.
-* 
 
