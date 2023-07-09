@@ -23,6 +23,14 @@ Run the application:
 
     mvn spring-boot:run
 
+**_OR_** 
+
+Using Docker:
+
+    cd AutocompleteStation
+    docker build -t autocomplete .
+    docker run -p 8080:8080 -t autocomplete
+
 The application will start on http://localhost:8080.
 
 ## Usage
