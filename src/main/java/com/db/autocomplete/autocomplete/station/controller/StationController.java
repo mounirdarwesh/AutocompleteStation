@@ -1,5 +1,6 @@
 package com.db.autocomplete.autocomplete.station.controller;
 
+import com.db.autocomplete.autocomplete.station.model.response.AutoCompleteResponse;
 import com.db.autocomplete.autocomplete.station.service.StationServiceImpl;
 import com.db.autocomplete.autocomplete.station.model.response.ErrorResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class StationController {
     public ResponseEntity<?> emptyAutoComplete(){
         // Perform input validation for empty or missing parameter
         return ResponseEntity.badRequest().body(
-                new ErrorResponse("002", "Input parameter is missing or empty")
+                new ErrorResponse("000", "Input parameter is missing or empty")
         );
     }
 
@@ -47,11 +48,19 @@ public class StationController {
         // Perform input validation for minimum length requirement
         if (name.length() < 3) {
             return ResponseEntity.badRequest().body(
-                    new ErrorResponse("003", "Input parameter length must be at least three characters")
+                    new ErrorResponse("002", "Input parameter length must be at least three characters")
             );
         }
 
-        return ResponseEntity.ok(service.getAutocompleteStations(name));
+        AutoCompleteResponse response = service.getAutocompleteStations(name);
+
+        if (response.getStation_list().isEmpty()){
+            return ResponseEntity.ok().body(
+                    new ErrorResponse("003", "No matching stations found")
+            );
+        }
+
+        return ResponseEntity.ok(response);
     }
 
     /**
