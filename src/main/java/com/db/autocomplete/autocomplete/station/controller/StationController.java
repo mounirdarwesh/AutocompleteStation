@@ -56,7 +56,7 @@ public class StationController {
 
     /**
      * get all Station Mapping
-     * @return
+     * @return All Stations
      */
     @GetMapping("/all")
     public ResponseEntity<?> getAllStations() {

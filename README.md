@@ -9,18 +9,18 @@ This project provides a RESTful web service for autocompleting train station nam
 
 ## Getting Started
 
-1. Clone the repository:
-
+Clone the repository:
 
     git clone git@github.com:mounirdarwesh/AutocompleteStation.git
 
-Build the project: **_It's recommended to run inside Intellij because of the encoding._**
+Build the project:
 
     cd AutocompleteStation
     mvn clean install
 
 Run the application:
 
+    export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
     mvn spring-boot:run
 
 **_OR_** 
@@ -30,6 +30,11 @@ Using Docker:
     cd AutocompleteStation
     docker build -t autocomplete .
     docker run -p 8080:8080 -t autocomplete
+
+**_OR_**
+
+    ./mvnw clean package
+    java -Dfile.encoding=UTF-8 -jar target/autocomplete-station-0.0.1-SNAPSHOT.jar 
 
 The application will start on http://localhost:8080.
 
