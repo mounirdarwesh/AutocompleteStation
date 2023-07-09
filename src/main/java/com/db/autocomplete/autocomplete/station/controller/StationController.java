@@ -1,6 +1,6 @@
 package com.db.autocomplete.autocomplete.station.controller;
 
-import com.db.autocomplete.autocomplete.station.service.StationService;
+import com.db.autocomplete.autocomplete.station.service.StationServiceImpl;
 import com.db.autocomplete.autocomplete.station.response.ErrorResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/auto-complete")
 public class StationController {
     @Autowired
-    private StationService service;
+    private StationServiceImpl service;
 
     /**
      * if no Name to autocomplete entered, an Error will be thrown.
@@ -51,7 +51,7 @@ public class StationController {
             );
         }
 
-        return ResponseEntity.ok(service.autocompleteStation(name));
+        return ResponseEntity.ok(service.getAutocompleteStations(name));
     }
 
     /**
