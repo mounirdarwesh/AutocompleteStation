@@ -1,7 +1,7 @@
 package com.db.autocomplete.autocomplete.station.controller;
 
 import com.db.autocomplete.autocomplete.station.service.StationServiceImpl;
-import com.db.autocomplete.autocomplete.station.response.ErrorResponse;
+import com.db.autocomplete.autocomplete.station.model.response.ErrorResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

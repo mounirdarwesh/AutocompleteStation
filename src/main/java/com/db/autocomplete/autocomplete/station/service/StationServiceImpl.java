@@ -2,7 +2,7 @@ package com.db.autocomplete.autocomplete.station.service;
 
 import com.db.autocomplete.autocomplete.station.repository.StationRepositoryImpl;
 import com.db.autocomplete.autocomplete.station.model.Station;
-import com.db.autocomplete.autocomplete.station.response.AutoCompleteResponse;
+import com.db.autocomplete.autocomplete.station.model.response.AutoCompleteResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

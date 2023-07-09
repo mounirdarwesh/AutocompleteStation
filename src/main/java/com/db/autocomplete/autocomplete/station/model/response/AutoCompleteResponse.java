@@ -1,4 +1,4 @@
-package com.db.autocomplete.autocomplete.station.response;
+package com.db.autocomplete.autocomplete.station.model.response;
 
 import lombok.Builder;
 import lombok.Data;
