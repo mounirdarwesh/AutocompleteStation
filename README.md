@@ -62,6 +62,10 @@ Example response:
     "number_of_stations_found": 3
     }
 
+To get all Stations, make a GET request to:
+
+    GET /api/v1/auto-complete/all
+
 ## Error Handling
 
 The web service handles various error scenarios and provides appropriate error responses. Possible error scenarios include:
