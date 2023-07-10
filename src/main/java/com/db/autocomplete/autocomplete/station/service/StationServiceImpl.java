@@ -38,7 +38,7 @@ public class StationServiceImpl implements StationService {
 
         // filter the name after the Condition and create the right String Format.
         List<String> stationList = stations.stream()
-                .filter(station -> station.getName().toLowerCase().contains(name.toLowerCase()))
+                .filter(station -> station.getName().toLowerCase().startsWith(name.toLowerCase()))
                 .map(station -> String.format("%s - %s - %s", station.getEvaNr(), station.getDs100(), station.getName()))
                 .collect(Collectors.toList());
 
