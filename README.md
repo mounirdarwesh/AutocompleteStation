@@ -66,7 +66,8 @@ Example response:
 
 The web service handles various error scenarios and provides appropriate error responses. Possible error scenarios include:
 
-* Alphanumeric characters in the input: Returns a 400 Bad Request response with an error code and description.
-* Missing or empty input parameter: Returns a 400 Bad Request response with an error code and description.
-* Input parameter length less than three characters: Returns a 400 Bad Request response with an error code and description.
+* Missing or empty input parameter: Returns a 400 Bad Request response with an error code 000 and description.
+* Alphanumeric characters in the input: Returns a 400 Bad Request response with an error code 001 and description.
+* Input parameter length less than three characters: Returns a 400 Bad Request response with an error code 002 and description.
+* No matching stations found: Returns a 200 Ok response with an error code 003 and description.
 
